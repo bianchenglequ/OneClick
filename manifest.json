@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "公众号文章同步助手",
+  "version": "1.0.0",
+  "description": "一键将公众号文章同步到多个平台",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "cookies",
+    "declarativeNetRequest"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "host_permissions": [
+    "*://mp.weixin.qq.com/s*",
+    "*://editor.csdn.net/md/*",
+    "*://i.cnblogs.com/EditPosts.aspx*",
+    "*://zhuanlan.zhihu.com/write",
+    "*://mp.toutiao.com/profile_v4/graphic/publish*",
+    "*://mp.toutiao.com/spice/image*",
+    "*://*.csdn.net/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mp.weixin.qq.com/s*"
+      ],
+      "js": [
+        "js/content.js"
+      ],
+      "css": [
+        "css/content.css"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/logo.svg"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}

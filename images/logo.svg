@@ -1,0 +1,6 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- 绿色背景 -->
+  <rect width="128" height="128" fill="#1aad19" rx="16" ry="16"/>
+  <!-- 白色文字 "One" -->
+  <text x="64" y="80" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="white">One</text>
+</svg>
